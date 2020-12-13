@@ -6,6 +6,13 @@ public class OrderServiceTest {
 
     OrderService orderService = new OrderService();
 
+	@Test
+    public void calculate_final_order_value_pass() {
+        addFoodItemsToCart();
+
+        assertEquals(1215, orderService.totalOrderValue());
+    }
+
     @Test
     public void calculate_final_order_value_fail() {
         addFoodItemsToCart();
